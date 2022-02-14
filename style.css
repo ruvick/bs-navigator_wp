@@ -3761,8 +3761,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 25%;
-          flex: 0 1 25%;
+  -ms-flex: 0 1 25%;
+  flex: 0 1 25%;
+  align-items: start;
   padding: 0px 15px 30px 15px;
 }
 
@@ -3840,6 +3841,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   background-repeat: no-repeat !important;
   background-size: contain !important;
   background-position: 100% 0 !important;
+  /* margin-top: -230px; */
 }
 
 .action ._container {
