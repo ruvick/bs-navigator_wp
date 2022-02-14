@@ -3686,9 +3686,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .about {
   padding: 74px 0 0 0;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 8% 0;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: 8% 0 !important;
 }
 
 .about ._container {
@@ -3833,13 +3833,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 30px 0;
   height: 736px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 100% 0;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: 100% 0 !important;
 }
 
 .action ._container {
@@ -4194,7 +4194,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
 
 /* Popup JS */
-.popup {
+/* .popup {
   -webkit-overflow-scrolling: touch;
   z-index: 500000;
   padding: 30px 10px;
@@ -4325,7 +4325,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   background-position: center;
   background-repeat: no-repeat;
   float: left;
-  margin: 10px 0; }
+  margin: 10px 0; } */
 /* Popup JS End*/
 
 
@@ -4828,23 +4828,23 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   }
 }
 
-._webp .parallax{ background: url(../img/smart-conven.webp) center/cover no-repeat fixed; }
+._webp .parallax{ background: url(img/smart-conven.webp) center/cover no-repeat fixed; }
 
-._webp .lg-outer .lg-has-vimeo .lg-video-play{ background: url(../img/vimeo-play.webp) no-repeat scroll 0 0 transparent; }
+._webp .lg-outer .lg-has-vimeo .lg-video-play{ background: url(img/vimeo-play.webp) no-repeat scroll 0 0 transparent; }
 
-._webp .lg-outer .lg-has-vimeo:hover .lg-video-play{ background: url(../img/vimeo-play.webp) no-repeat scroll 0 -58px transparent; }
+._webp .lg-outer .lg-has-vimeo:hover .lg-video-play{ background: url(img/vimeo-play.webp) no-repeat scroll 0 -58px transparent; }
 
-._webp .lg-outer .lg-has-html5 .lg-video-play{ background: transparent url(../img/video-play.webp) no-repeat scroll 0 0; }
+._webp .lg-outer .lg-has-html5 .lg-video-play{ background: transparent url(img/video-play.webp) no-repeat scroll 0 0; }
 
-._webp .lg-outer .lg-has-youtube .lg-video-play{ background: url(../img/youtube-play.webp) no-repeat scroll 0 0 transparent; }
+._webp .lg-outer .lg-has-youtube .lg-video-play{ background: url(img/youtube-play.webp) no-repeat scroll 0 0 transparent; }
 
-._webp .lg-outer .lg-has-youtube:hover .lg-video-play{ background: url(../img/youtube-play.webp) no-repeat scroll 0 -60px transparent; }
+._webp .lg-outer .lg-has-youtube:hover .lg-video-play{ background: url(img/youtube-play.webp) no-repeat scroll 0 -60px transparent; }
 
-._webp .slider-main__slide{ background: url(../img/index-bg.webp); }
+._webp .slider-main__slide{ background: url(img/index-bg.webp); }
 
-._webp .about{ background: url(../img/about.webp); }
+._webp .about{ background: url(img/about.webp); }
 
-._webp .action{ background: url(../img/action.webp); }
+._webp .action{ background: url(img/action.webp); }
 
-._webp .banner{ background-image: url(../img/service-bg-01.webp); }
+._webp .banner{ background-image: url(img/service-bg-01.webp); }
 
