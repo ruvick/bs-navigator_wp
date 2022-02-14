@@ -30,12 +30,6 @@ function number_format() {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-	number_format();
-	cart_recalc();
-	inBascetCounting();
-});
-
 // Отправка на печать -------------------------------------------------------------------------------------------------------------
 function printit() {
 	if (window.print) {
