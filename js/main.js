@@ -254,26 +254,6 @@ if (location.hash) {
 }
 //=================
 
-//Menu старое
-// let iconMenu = document.querySelector(".icon-menu");
-// if (iconMenu != null) {
-// 	let delay = 500;
-// 	let menuBody = document.querySelector(".menu__body");
-// 	iconMenu.addEventListener("click", function (e) {
-// 		if (unlock) {
-// 			body_lock(delay);
-// 			iconMenu.classList.toggle("_active");
-// 			menuBody.classList.toggle("_active");
-// 		}
-// 	});
-// };
-// function menu_close() {
-// 	let iconMenu = document.querySelector(".icon-menu");
-// 	let menuBody = document.querySelector(".menu__body");
-// 	iconMenu.classList.remove("_active");
-// 	menuBody.classList.remove("_active");
-// } 
-//=================
 
 //BodyLock
 function body_lock(delay) {
@@ -1650,113 +1630,6 @@ if (priceSlider) {
 }
 // ============================================================================================================
 
-// Отправка файла плагином PHPMailer ==========================================================================
-// document.addEventListener('DOMContentLoaded', function () {
-// 	const form = document.getElementById('form');
-// 	form.addEventListener('submit', formSend);
-
-// 	async function formSend(e) {
-// 		e.preventDefault();
-
-// 		let error = formValidate(form);
-
-// 		let formData = new FormData(form);
-// 		formData.append('image', formImage.files[0]);
-
-// 		if (error === 0) {
-// 			form.classList.add('_sending');
-// 			let response = await fetch('sendmail.php', {
-// 				method: 'POST',
-// 				body: formData
-// 			});
-// 			if (response.ok) {
-// 				let result = await response.json();
-// 				alert(result.message);
-// 				formPreview.innerHTML = '';
-// 				form.reset();
-// 				form.classList.remove('_sending');
-// 			} else {
-// 				alert("Ошибка");
-// 				form.classList.remove('_sending');
-// 			}
-// 		} else {
-// 			alert('Заполните обязательные поля');
-// 		}
-
-// 	}
-
-
-// 	function formValidate(form) {
-// 		let error = 0;
-// 		let formReq = document.querySelectorAll('._req');
-
-// 		for (let index = 0; index < formReq.length; index++) {
-// 			const input = formReq[index];
-// 			formRemoveError(input);
-
-// 			if (input.classList.contains('_email')) {
-// 				if (emailTest(input)) {
-// 					formAddError(input);
-// 					error++;
-// 				}
-// 			} else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
-// 				formAddError(input);
-// 				error++;
-// 			} else {
-// 				if (input.value === '') {
-// 					formAddError(input);
-// 					error++;
-// 				}
-// 			}
-// 		}
-// 		return error;
-// 	}
-// 	function formAddError(input) {
-// 		input.parentElement.classList.add('_error');
-// 		input.classList.add('_error');
-// 	}
-// 	function formRemoveError(input) {
-// 		input.parentElement.classList.remove('_error');
-// 		input.classList.remove('_error');
-// 	}
-// 	//Функция теста email
-// 	function emailTest(input) {
-// 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-// 	}
-
-// 	//Получаем инпут file в переменную
-// 	const formImage = document.getElementById('formImage');
-// 	//Получаем див для превью в переменную
-// 	const formPreview = document.getElementById('formPreview');
-
-// 	//Слушаем изменения в инпуте file
-// 	formImage.addEventListener('change', () => {
-// 		uploadFile(formImage.files[0]);
-// 	});
-
-// 	function uploadFile(file) {
-// 		// провераяем тип файла
-// 		if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
-// 			alert('Разрешены только изображения.');
-// 			formImage.value = '';
-// 			return;
-// 		}
-// 		// проверим размер файла (<2 Мб)
-// 		if (file.size > 2 * 1024 * 1024) {
-// 			alert('Файл должен быть менее 2 МБ.');
-// 			return;
-// 		}
-
-// 		var reader = new FileReader();
-// 		reader.onload = function (e) {
-// 			formPreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
-// 		};
-// 		reader.onerror = function (e) {
-// 			alert('Ошибка');
-// 		};
-// 		reader.readAsDataURL(file);
-// 	}
-// });
 
 let scr_body = document.querySelector('body');
 let scr_blocks = document.querySelectorAll('._scr-sector');
@@ -2220,6 +2093,61 @@ function scroll_animate(event) {
 	//If native scroll
 	//disableScroll();
 }
+
+
+// Отправщик ----------------------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+	let universal_form = document.getElementsByClassName("universal_form");
+
+
+	if (universal_form !== undefined) {
+		Array.from(universal_form).forEach((element, index) => {
+			let unisend_form = element.getElementsByClassName("universal_send_form")[0];
+			let unisend_btn = element.getElementsByClassName("u_send")[0];
+
+			unisend_btn.onclick = (e) => {
+				// console.log(unisend_form);
+				// console.log(unisend_form.getElementsByClassName("_req"));
+
+
+				let error = form_validate(unisend_form);
+				if (error == 0) {
+					e.stopPropagation()
+
+					var xhr = new XMLHttpRequest()
+
+					var params = new URLSearchParams()
+					params.append('action', 'sendphone')
+					params.append('nonce', allAjax.nonce)
+					params.append('name', unisend_form.getElementsByClassName("_name")[0].value)
+					params.append('tel', unisend_form.getElementsByClassName("_tel")[0].value)
+
+					xhr.onload = function (e) {
+						element.getElementsByClassName("headen_form_blk")[0].style.display = "none";
+						element.getElementsByClassName("SendetMsg")[0].style.display = "block";
+						document.location.href = "https://bs-navigator.asmi-studio.ru/stranica-blagodarnosti";
+						// to_crm(unisend_form.getElementsByClassName("_name")[0].value, unisend_form.getElementsByClassName("_tel")[0].value, obj[0].value);
+					}
+
+					xhr.onerror = function () {
+						error(xhr, xhr.status);
+					};
+
+					xhr.open('POST', allAjax.ajaxurl, true);
+					xhr.send(params);
+				} else {
+					let form_error = unisend_form.querySelectorAll('._error');
+					if (form_error && unisend_form.classList.contains('_goto-error')) {
+						_goto(form_error[0], 1000, 50);
+					}
+					e.preventDefault();
+				}
+			}
+
+		});
+	}
+
+});
 
 // Файлы Java Script End -----------------------------------------------------------------------------------------------------
 

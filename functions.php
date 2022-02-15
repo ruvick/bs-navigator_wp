@@ -1,6 +1,6 @@
 <?php
 
-define("COMPANY_NAME", "Новый сайт");
+define("COMPANY_NAME", "БИЗНЕС-НАВИГАТОР");
 define("MAIL_RESEND", "noreply@ultrakresla.ru");
 
 //----Подключене carbon fields
