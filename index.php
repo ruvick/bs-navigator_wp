@@ -5,7 +5,6 @@
 <main class="page">
 
 			<section id="slider-main" class="slider-main">
-
 				<div class="slider-bg-wrap">
 					<div class="slider-bg _swiper">
 					<?
@@ -28,7 +27,6 @@
 							}
 						}
 					?> 
-
 					</div>
 					<div class="slider-bg__swiper-button-block swiper-button-block">
 						<div class="_container">
@@ -37,22 +35,18 @@
 						</div>
 					</div>
 				</div>
-
 			</section>
 
 			<section id="about" class="about">
 				<div class="_container">
 					<div class="about__descp">
-						<p>
-							<span>БизнесНавигатор –</span> это нечто вроде «Дома Быта» для Бизнеса. Здесь может получить
-							квалифицированною помощь,
-							поддержку или консультацию каждый предприниматель вне зависимости от опыта, «полноты набитого кармана»
-							:-)).
-							Теперь нет необходимости раздувать штата предприятия узкими специалистами сомнительной квалификации.
-						</p>
+					<? $abouttc = carbon_get_theme_option("about_home");
+						if (!empty($abouttc)) { ?>
+							<? echo $abouttc; ?>
 						<p class="about__descp-mark">
-							Вы будете удивлены, как легко находятся решения!
+							<?php echo carbon_get_theme_option('about_home_strong'); ?>
 						</p>
+					<? } ?>
 					</div>
 
 				</div>

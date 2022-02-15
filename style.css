@@ -3726,6 +3726,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   max-width: 556px;
   width: 100%;
   background: #FFE3D8;
+  margin-top: 10px;
 }
 
 .about__descp-mark:before {
