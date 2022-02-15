@@ -3,16 +3,10 @@
 
 		<div class="header__row d-flex">
 
-			<a href="<? bloginfo("url"); ?>" class="logo-icon header__logo"></a>
+			<a href="<? bloginfo("url"); ?>" class="logo-icon header__logo"></a> 
 
-			<ul class="menu-list header__menu-list d-flex">
-				<li class="menu-list__item"><a href="#" class="menu-list__link">Контакты</a></li>
-				<li class="menu-list__item"><a href="#" class="menu-list__link">Главная</a></li>
-				<li class="menu-list__item"><a href="#" class="menu-list__link">Услуги</a></li>
-				<li class="menu-list__item"><a href="#" class="menu-list__link">Цены</a></li>
-			</ul>
-			<!-- <?php wp_nav_menu( array('theme_location' => 'menu_main','menu_class' => 'menu__list',
-						'container_class' => 'menu__list','container' => false )); ?>  -->
+			<?php wp_nav_menu( array('theme_location' => 'menu_main','menu_class' => 'menu-list header__menu-list',
+						'container_class' => 'menu-list header__menu-list','container' => false )); ?> 
 
 			<div class="contacts header__contacts d-flex">
 				<a href="#" class="social-link header__social-link header__social-link-01"></a>
@@ -37,13 +31,7 @@
 
 <!-- Мобильное меню -->
 <div class="mob-menu header__mob-menu">
-	<ul class="mob-menu__list">
-		<li class="mob-menu__item"><a href="#" class="mob-menu__link">Контакты</a></li>
-		<li class="mob-menu__item"><a href="#" class="mob-menu__link">Главная</a></li>
-		<li class="mob-menu__item"><a href="#" class="mob-menu__link">Услуги</a></li>
-		<li class="mob-menu__item"><a href="#" class="mob-menu__link">Цены</a></li>
-	</ul>
-	<!-- <?php wp_nav_menu( array('theme_location' => 'menu_main','menu_class' => 'mob-menu__list',
-		'container_class' => 'mob-menu__list','container' => false )); ?>  -->
+	<?php wp_nav_menu( array('theme_location' => 'menu_main','menu_class' => 'mob-menu__list',
+		'container_class' => 'mob-menu__list','container' => false )); ?> 
 	<a href="#callback" class="header__popup-link btn header__popup-link_mob _popup-link">ЗАКАЗАТЬ ЗВОНОК</a>
 </div>

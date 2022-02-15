@@ -3,12 +3,8 @@
 
 		<div class="footer__row d-flex">
 
-			<ul class="footer__menu">
-				<li class="footer__menu-item"><a href="#" class="footer__menu-item-link">Бухгалтерия</a></li>
-				<li class="footer__menu-item"><a href="#" class="footer__menu-item-link">Налоги</a></li>
-				<li class="footer__menu-item"><a href="#" class="footer__menu-item-link">Юридическая защита</a></li>
-				<li class="footer__menu-item"><a href="#" class="footer__menu-item-link">Открытие бизнеса</a></li>
-			</ul>
+			<?php wp_nav_menu( array('theme_location' => 'menu_foot','menu_class' => 'footer__menu',
+				'container_class' => 'footer__menu','container' => false )); ?> 
 
 			<div class="footer__info">
 				<a href="#" class="social-link header__social-link footer__social-link-01"></a>
