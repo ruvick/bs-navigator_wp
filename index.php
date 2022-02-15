@@ -8,20 +8,27 @@
 
 				<div class="slider-bg-wrap">
 					<div class="slider-bg _swiper">
-						<div class="slider-bg__slide slider__slide slider-main__slide">
+					<?
+						$pict = carbon_get_theme_option('slider_index');
+							if ($pict) {
+						$pictIndex = 0;
+							foreach ($pict as $item) {
+					?>
+						<div class="slider-bg__slide slider__slide slider-main__slide" style="background-image: url(<?php echo wp_get_attachment_image_src($item['slider_img'], 'full')[0]; ?>);">
 							<div class="nuar_blk"></div>
-							<div class="slider-bg__container _container">
-								<h1 class="slider-bg__title">
-									Полный спектр <br>
-									услуг для бизнеса
-								</h1>
-								<p class="slider-bg__subtitle">
-									Даже бюрократия может быть забавной, <br>
-									если владеть информацией! <br>
-									Ф. Кафка
-								</p>
+							<div class="slider-bg__container _container"> 
+								<? if (!empty($item['slider_title'])) { ?>
+									<h1 class="slider-bg__title"><? echo $item['slider_title']; ?></h1>
+									<p class="slider-bg__subtitle"><? echo $item['slider_subtitle']; ?></p>
+								<? } ?>
 							</div>
 						</div>
+					<?
+							$pictIndex++;
+							}
+						}
+					?> 
+
 					</div>
 					<div class="slider-bg__swiper-button-block swiper-button-block">
 						<div class="_container">
@@ -74,7 +81,7 @@
 					<div class="services__row">
 
 						<div class="services__column">
-							<div class="services__card">
+							<a href="" class="services__card">
 								<div class="services__card-img">
 									<picture><source srcset="<?php echo get_template_directory_uri();?>/img/services/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/services/01.jpg?_v=1644831629696" alt=""></picture>
 								</div>
@@ -107,11 +114,11 @@
 										<li>Бухгалтерское сопровождение</li>
 									</ul>
 								</div>
-							</div>
+							</a>
 						</div>
 
 						<div class="services__column">
-							<div class="services__card">
+							<a href="" class="services__card">
 								<div class="services__card-img">
 									<picture><source srcset="<?php echo get_template_directory_uri();?>/img/services/02.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/services/02.jpg?_v=1644831629696" alt=""></picture>
 								</div>
@@ -136,11 +143,11 @@
 										</li>
 									</ul>
 								</div>
-							</div>
+							</a>
 						</div>
 
 						<div class="services__column">
-							<div class="services__card">
+							<a href="" class="services__card">
 								<div class="services__card-img">
 									<picture><source srcset="<?php echo get_template_directory_uri();?>/img/services/03.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/services/03.jpg?_v=1644831629696" alt=""></picture>
 								</div>
@@ -159,11 +166,11 @@
 										<li>Участие в переговорах</li>
 									</ul>
 								</div>
-							</div>
+							</a>
 						</div>
 
 						<div class="services__column">
-							<div class="services__card">
+							<a href="" class="services__card">
 								<div class="services__card-img">
 									<picture><source srcset="<?php echo get_template_directory_uri();?>/img/services/04.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/services/04.jpg?_v=1644831629696" alt=""></picture>
 								</div>
@@ -182,7 +189,7 @@
 										<li>Регистрация ИП</li>
 									</ul>
 								</div>
-							</div>
+							</a>
 						</div>
 
 					</div>
