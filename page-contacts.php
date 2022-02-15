@@ -11,11 +11,18 @@ get_header(); ?>
 
 <main class="page">
 
-	<section id="banner" class="banner">
-		<div class="_container">
-			<h1 class="banner__title"><? the_title();?></h1> 
-		</div>
-	</section>
+<?php 
+		$banner = wp_get_attachment_image_src( carbon_get_the_post_meta('banner_page'), 'full')[0];
+			if(empty($banner)) {
+		$banner = get_template_directory_uri() . '/img/service-bg-01.jpg';
+	} 
+?>
+
+<section id="banner" class="banner" style="background-image: url(<?php echo $banner?>);">
+  <div class="_container">
+    <h1 class="banner__title"><? the_title();?></h1>
+  </div>
+</section>
 
   <section class="content">
   <div class="_container"> 

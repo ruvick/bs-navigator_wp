@@ -4635,5 +4635,5 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
 ._webp .action{ background: url(img/action.webp); }
 
-._webp .banner{ background-image: url(img/service-bg-01.webp); }
+/* ._webp .banner{ background-image: url(img/service-bg-01.webp); } */
 
