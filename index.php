@@ -75,7 +75,7 @@
 					<div class="services__row">
 
 						<div class="services__column">
-							<a href="" class="services__card">
+							<a href="<?php echo get_permalink(20);?>" class="services__card">
 								<div class="services__card-img">
 									<picture><source srcset="<?php echo get_template_directory_uri();?>/img/services/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/services/01.jpg?_v=1644831629696" alt=""></picture>
 								</div>
@@ -112,7 +112,7 @@
 						</div>
 
 						<div class="services__column">
-							<a href="" class="services__card">
+							<a href="<?php echo get_permalink(20);?>" class="services__card">
 								<div class="services__card-img">
 									<picture><source srcset="<?php echo get_template_directory_uri();?>/img/services/02.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/services/02.jpg?_v=1644831629696" alt=""></picture>
 								</div>
@@ -141,7 +141,7 @@
 						</div>
 
 						<div class="services__column">
-							<a href="" class="services__card">
+							<a href="<?php echo get_permalink(20);?>" class="services__card">
 								<div class="services__card-img">
 									<picture><source srcset="<?php echo get_template_directory_uri();?>/img/services/03.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/services/03.jpg?_v=1644831629696" alt=""></picture>
 								</div>
@@ -164,7 +164,7 @@
 						</div>
 
 						<div class="services__column">
-							<a href="" class="services__card">
+							<a href="<?php echo get_permalink(20);?>" class="services__card">
 								<div class="services__card-img">
 									<picture><source srcset="<?php echo get_template_directory_uri();?>/img/services/04.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/services/04.jpg?_v=1644831629696" alt=""></picture>
 								</div>
