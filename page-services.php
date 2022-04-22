@@ -46,7 +46,7 @@ get_header(); ?>
             <a href="'.get_the_permalink().'" class="services__card">
               <div class="services__card-img">
                 <picture>
-                  <source srcset="<?php echo get_template_directory_uri();?>/img/services/04.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/services/04.jpg?_v=1644831629696" alt="">
+                  <img src="'.get_the_post_thumbnail_url( get_the_ID(), "tominiatyre" ).'" alt="">
                 </picture>
               </div>
               <div class="services__card-descp">
