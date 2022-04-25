@@ -4160,11 +4160,33 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   padding-top: 35px;
 }
 
+.services__card-descp ul {}
 
+.services__card-descp ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 15px;
+}
 
+.services__card-descp ul li:last-child {
+  margin-bottom: 0;
+}
 
-
-
+.services__card-descp ul li:before {
+  content: "";
+  float: left;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 4px;
+  flex: 0 0 4px;
+  height: 4px;
+  margin-top: 6px;
+  margin-right: 6px;
+  background: #FE783E;
+  border-radius: 1px;
+}
 
 
 

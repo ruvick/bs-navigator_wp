@@ -51,15 +51,7 @@ get_header(); ?>
               </div>
               <div class="services__card-descp">
                 <h3 class="services__card-descp-title">'.get_the_title().'</h3>
-                <ul class="services__card-descp-list">
-                  <li>
-                    Содействие в регистрации
-                    реорганизации ликвидации
-                    юридических лиц
-                  </li>
-                  <li>Регистрация ООО</li>
-                  <li>Регистрация ИП</li>
-                </ul>
+								'.carbon_get_post_meta(get_the_ID(),"service_smile_descr").'
               </div>
             </a>
           </div>';
