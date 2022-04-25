@@ -73,119 +73,35 @@
 					<h2 class="services__title">Наши услуги</h2>
 
 					<div class="services__row">
-
-						<div class="services__column">
-							<a href="<?php echo get_permalink(20);?>" class="services__card">
-								<div class="services__card-img">
-									<picture><source srcset="<?php echo get_template_directory_uri();?>/img/services/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/services/01.jpg?_v=1644831629696" alt=""></picture>
-								</div>
-								<div class="services__card-descp">
-									<h3 class="services__card-descp-title">
-										Бухгалтерия и
-										бухгалтерский учет
-									</h3>
-									<ul class="services__card-descp-list">
-										<li>Бухгалтерское обслуживание</li>
-										<li>
-											Постановка и ведение
-											оперативно-хозяйственного,
-											управленческого учета
-										</li>
-										<li>
-											Составление бухгалтерской и
-											налоговой отчетности
-											по Вашим документам
-										</li>
-										<li>
-											Восстановление
-											бухгалтерского
-											учета
-										</li>
-										<li>
-											Постановка бухгалтерского
-											учета
-										</li>
-										<li>Бухгалтерское сопровождение</li>
-									</ul>
-								</div>
-							</a>
-						</div>
-
-						<div class="services__column">
-							<a href="<?php echo get_permalink(20);?>" class="services__card">
-								<div class="services__card-img">
-									<picture><source srcset="<?php echo get_template_directory_uri();?>/img/services/02.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/services/02.jpg?_v=1644831629696" alt=""></picture>
-								</div>
-								<div class="services__card-descp">
-									<h3 class="services__card-descp-title">
-										Взаимодествие с
-										налоговой инспекцией
-									</h3>
-									<ul class="services__card-descp-list">
-										<li>
-											Оптимизация налогооблагаемой
-											базы легальными путями
-										</li>
-										<li>
-											2-НДФЛ персонифицированный
-											учет
-										</li>
-										<li>
-											Ведение полной бухгалтерии со
-											сдачей отчетности в ИФНС,
-											Госкомстат и Фонды РФ
-										</li>
-									</ul>
-								</div>
-							</a>
-						</div>
-
-						<div class="services__column">
-							<a href="<?php echo get_permalink(20);?>" class="services__card">
-								<div class="services__card-img">
-									<picture><source srcset="<?php echo get_template_directory_uri();?>/img/services/03.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/services/03.jpg?_v=1644831629696" alt=""></picture>
-								</div>
-								<div class="services__card-descp">
-									<h3 class="services__card-descp-title">
-										Юридическое
-										сопровождение
-										бизнеса
-									</h3>
-									<ul class="services__card-descp-list">
-										<li>
-											Правовое сопровождение и
-											безопасность
-										</li>
-										<li>Консультирование</li>
-										<li>Участие в переговорах</li>
-									</ul>
-								</div>
-							</a>
-						</div>
-
-						<div class="services__column">
-							<a href="<?php echo get_permalink(20);?>" class="services__card">
-								<div class="services__card-img">
-									<picture><source srcset="<?php echo get_template_directory_uri();?>/img/services/04.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/services/04.jpg?_v=1644831629696" alt=""></picture>
-								</div>
-								<div class="services__card-descp">
-									<h3 class="services__card-descp-title">
-										Открытие и
-										организация бизнеса
-									</h3>
-									<ul class="services__card-descp-list">
-										<li>
-											Содействие в регистрации
-											реорганизации ликвидации
-											юридических лиц
-										</li>
-										<li>Регистрация ООО</li>
-										<li>Регистрация ИП</li>
-									</ul>
-								</div>
-							</a>
-						</div>
-
+						<?php
+							$page_children = new WP_Query(
+								array(
+									'post_type' => 'page',
+									'post_parent' => '32',
+									'order'       => 'ASC',
+											)
+										);
+								if ($page_children->have_posts()) :
+								while ($page_children->have_posts()) : $page_children->the_post();
+						?>
+ 							<div class="services__column">
+            		<a href="<?echo get_the_permalink(get_the_ID());?>" class="services__card">
+              		<div class="services__card-img">
+                		<picture>
+											<img src="<?php  $imgTm = get_the_post_thumbnail_url( get_the_ID(), "tominiatyre" ); echo empty($imgTm)?get_bloginfo("template_url")."/img/no-photo.jpg":$imgTm; ?>" alt="<? the_title();?>"> 
+                		</picture>
+              		</div>
+              		<div class="services__card-descp">
+                		<h3 class="services__card-descp-title"><? the_title();?></h3>
+											<?echo carbon_get_post_meta(get_the_ID(),"service_smile_descr"); ?>
+              		</div>
+            		</a>
+          		</div>
+						<?php
+								endwhile;
+								endif;
+							wp_reset_query();
+						?>
 					</div>
 
 				</div>
