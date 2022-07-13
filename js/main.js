@@ -2125,7 +2125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					xhr.onload = function (e) {
 						element.getElementsByClassName("headen_form_blk")[0].style.display = "none";
 						element.getElementsByClassName("SendetMsg")[0].style.display = "block";
-						document.location.href = "https://bs-navigator.asmi-studio.ru/stranica-blagodarnosti";
+						document.location.href = "https://navigator-pro.ru/stranica-blagodarnosti";
 						// to_crm(unisend_form.getElementsByClassName("_name")[0].value, unisend_form.getElementsByClassName("_tel")[0].value, obj[0].value);
 					}
 

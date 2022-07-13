@@ -25,7 +25,7 @@ get_header(); ?>
 </section>
 
 <section id="descript" class="descript">
-  <div class="_container">
+  <div class="_container text_blk">
     <?php
 			if ( function_exists('yoast_breadcrumb') ) {
 				yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );  
