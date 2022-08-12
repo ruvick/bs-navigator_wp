@@ -85,17 +85,17 @@
 								while ($page_children->have_posts()) : $page_children->the_post();
 						?>
  							<div class="services__column">
-            		<a href="<?echo get_the_permalink(get_the_ID());?>" class="services__card">
-              		<div class="services__card-img">
+            		<div class="services__card">
+              		<a href="<?echo get_the_permalink(get_the_ID());?>" class="services__card-img">
                 		<picture>
 											<img src="<?php  $imgTm = get_the_post_thumbnail_url( get_the_ID(), "tominiatyre" ); echo empty($imgTm)?get_bloginfo("template_url")."/img/no-photo.jpg":$imgTm; ?>" alt="<? the_title();?>"> 
                 		</picture>
-              		</div>
+									</a>
               		<div class="services__card-descp">
-                		<h3 class="services__card-descp-title"><? the_title();?></h3>
+                		<a href="<?echo get_the_permalink(get_the_ID());?>"><h3 class="services__card-descp-title"><? the_title();?></h3></a>
 											<?echo carbon_get_post_meta(get_the_ID(),"service_smile_descr"); ?>
               		</div>
-            		</a>
+            		</div>
           		</div>
 						<?php
 								endwhile;

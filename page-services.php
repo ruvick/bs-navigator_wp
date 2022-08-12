@@ -43,17 +43,17 @@ get_header(); ?>
 		    while($stati_children->have_posts()): $stati_children->the_post();
 			  echo '
           <div class="services__column">
-            <a href="'.get_the_permalink().'" class="services__card">
-              <div class="services__card-img">
+            <div class="services__card">
+              <a href="'.get_the_permalink().'" class="services__card-img">
                 <picture>
                   <img src="'.get_the_post_thumbnail_url( get_the_ID(), "tominiatyre" ).'" alt="">
                 </picture>
-              </div>
+              </a>
               <div class="services__card-descp">
-                <h3 class="services__card-descp-title">'.get_the_title().'</h3>
+							<a href="'.get_the_permalink().'"><h3 class="services__card-descp-title">'.get_the_title().'</h3></a>
 								'.carbon_get_post_meta(get_the_ID(),"service_smile_descr").'
               </div>
-            </a>
+            </div>
           </div>';
 		    endwhile;
 	      endif; wp_reset_query();
