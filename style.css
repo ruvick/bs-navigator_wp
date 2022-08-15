@@ -4043,7 +4043,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .banner {
   padding: 55px 0 115px 0;
-  height: 300px;
+  min-height: 300px;
   background-position: 0 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -4217,7 +4217,9 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   color: #FE783E;
 }
 
-
+.banner__title {
+  width: 65%;
+}
 
 
 
@@ -4601,7 +4603,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
   .banner {
     padding: 85px 0 35px 0 !important;
-    height: auto;
+    min-height: auto;
   }
 }
 
