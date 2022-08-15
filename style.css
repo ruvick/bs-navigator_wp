@@ -201,11 +201,10 @@ strong {
   font-weight: 600;
 }
 
-.text_blk h1, 
-.text_blk h2, 
-.text_blk h3, 
-.text_blk h4
-{
+.text_blk h1,
+.text_blk h2,
+.text_blk h3,
+.text_blk h4 {
   margin-bottom: 20px;
   font-weight: 600;
 }
@@ -4214,7 +4213,9 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   border-radius: 1px;
 }
 
-
+.services__card-descp a:hover {
+  color: #FE783E;
+}
 
 
 
@@ -4259,8 +4260,9 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
 @media (max-width: 1440px) {
   .about {
-    background-size: 50%!important
+    background-size: 50% !important
   }
+
   .about__descp {
     max-width: 550px;
     padding: 60px 0 60px 0;
@@ -4350,7 +4352,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   }
 
   .about {
-    background-size: 50%!important
+    background-size: 50% !important
   }
 
   .about__descp {
@@ -4687,7 +4689,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   ._webp .action,
   .about,
   ._webp .about {
-    background: none!important;
+    background: none !important;
   }
 
   .action {
@@ -4695,7 +4697,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   }
 
   .banner__title {
-    width:100%;
+    width: 100%;
   }
 }
 
