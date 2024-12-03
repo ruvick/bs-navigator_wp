@@ -12,7 +12,7 @@ get_header(); ?>
 <main class="page">
 
 <?php 
-		$banner = wp_get_attachment_image_src( carbon_get_the_post_meta('banner_page'), 'full')[0];
+		$banner = isset(wp_get_attachment_image_src( carbon_get_the_post_meta('banner_page'), 'full')[0])?wp_get_attachment_image_src( carbon_get_the_post_meta('banner_page'), 'full')[0]:"";
 			if(empty($banner)) {
 		$banner = get_template_directory_uri() . '/img/service-bg-01.jpg';
 	} 
